@@ -1,0 +1,34 @@
+---
+title: "JHU_DSS - Building Data Product - Assignment 1"
+author: "Partha Hazra"
+date: "March 26, 2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Korbo, Lorbo, Jitbo [It is in bengali what mean Will do, Will fight and Will win]
+
+This is IPL time and time to cheer for our city team Kolkata Knight Riders (aka KKR). 2 champions are ready to lift the cup for one more time and city welcomes their Knights. 
+
+When we talk about KK, it reminds us about the den of Knights - Eden Gardens. 
+
+Eden Gardens is a cricket ground in Kolkata, India established in 1864. It is the oldest cricket stadium in India. It is the home venue of the Bengal cricket team and the IPL franchise cricket team Kolkata Knight Riders, and is also a venue for Test, ODI and T20I matches of the India national cricket team.The stadium currently has a capacity of 68,000.
+
+Let's take a glance at Knight's Den - Eden.
+
+```{r }
+library(leaflet)
+library(dplyr)
+
+KKR_Logo <- makeIcon(iconUrl = "http://www.freelogovectors.net/wp-content/uploads/2018/04/Kolkata-Knight-Riders-Logo_freelogovectors.net_.png", iconWidth = 40*215/230,iconHeight = 40,iconAnchorX = 40*215/230,iconAnchorY = 15)
+
+About_Eden <- c("<a href='https://en.wikipedia.org/wiki/Eden_Gardens'> Eden Garden </a>")
+
+leaflet() %>%
+addTiles() %>%
+addMarkers(lat=22.5647,lng=88.3433, popup = About_Eden,icon = KKR_Logo)
+
+```
